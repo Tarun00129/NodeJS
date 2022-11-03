@@ -13,3 +13,5 @@ const fs = require('fs');
 
 // fs.renameSync("read.txt","myFile.txt")
 
+// fs.mkdirSync("tarun");
+// fs.writeFileSync('tarun/bio.txt',"hiii i a bio file");
