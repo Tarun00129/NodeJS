@@ -24,7 +24,11 @@ const fs = require('fs');
 //     if(err) throw err;
 // })
 
-fs.rm('tarun_folder/mybio.txt',(err)=>{
-    if(err) throw err;
-    console.log("File deleted");
+// fs.rm('tarun_folder/mybio.txt',(err)=>{
+//     if(err) throw err;
+//     console.log("File deleted");
+// })
+
+fs.rmdir('tarun_folder',(err)=>{
+    if (err) throw err;
 })
