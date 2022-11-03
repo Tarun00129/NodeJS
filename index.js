@@ -1,3 +1,4 @@
+const { constants } = require('buffer');
 const fs = require('fs');
 // fs.writeFileSync("read.txt","I'm Tarun's file");
 
@@ -16,4 +17,9 @@ const fs = require('fs');
 // fs.mkdirSync("tarun");
 // fs.writeFileSync('tarun/bio.txt',"hiii i a bio file");
 
-fs.appendFileSync('tarun/bio.txt'," this line is appanded brother look hear :) ")
+// fs.appendFileSync('tarun/bio.txt'," this line is appanded brother look hear :) ")
+
+// fs.renameSync("tarun/bio.txt","tarun/new.txt");
+
+const data = fs.readFileSync("tarun/new.txt","utf-8");
+console.log(data);
