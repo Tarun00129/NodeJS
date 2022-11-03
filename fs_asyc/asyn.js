@@ -20,6 +20,11 @@ const fs = require('fs');
 //     console.log(data);
 // })
 
-fs.rename('tarun_folder/myFile.txt','tarun_folder/mybio.txt',(err)=>{
+// fs.rename('tarun_folder/myFile.txt','tarun_folder/mybio.txt',(err)=>{
+//     if(err) throw err;
+// })
+
+fs.rm('tarun_folder/mybio.txt',(err)=>{
     if(err) throw err;
+    console.log("File deleted");
 })
