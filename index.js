@@ -15,3 +15,5 @@ const fs = require('fs');
 
 // fs.mkdirSync("tarun");
 // fs.writeFileSync('tarun/bio.txt',"hiii i a bio file");
+
+fs.appendFileSync('tarun/bio.txt'," this line is appanded brother look hear :) ")
