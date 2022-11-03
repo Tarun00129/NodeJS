@@ -21,5 +21,6 @@ const fs = require('fs');
 
 // fs.renameSync("tarun/bio.txt","tarun/new.txt");
 
-const data = fs.readFileSync("tarun/new.txt","utf-8");
-console.log(data);
+// const data = fs.readFileSync("tarun/new.txt","utf-8");
+// console.log(data);
+fs.renameSync("tarun/new.txt","tarun/bio.txt");
