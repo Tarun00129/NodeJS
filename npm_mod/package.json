@@ -1,0 +1,14 @@
+{
+  "name": "npm_mod",
+  "version": "1.0.0",
+  "description": "\"npm module creations\"",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarun",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.7.0"
+  }
+}
