@@ -14,4 +14,4 @@ const div =(num1,num2) =>{
     return num1 / num2;
 }
 
-module.exports = {add:add,sub:sub,mul:mul,div:div} // now the scope is Public
+module.exports = {'add':add,sub:sub,mul:mul,div:div} // now the scope is Public
