@@ -10,7 +10,8 @@ const server = http.createServer((req,res)=>{
     }
     else
     {
-        res.end("Response Not Found")
+        res.writeHead(404,{"Content-type":"text/html"})
+        res.end("<h1> Page Not Found </h1>")
     }
     // console.log("connected");
 });
