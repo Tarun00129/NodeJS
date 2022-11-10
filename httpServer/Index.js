@@ -1,7 +1,8 @@
 const fs = require("fs")
 const http =require("http")
+
 const server = http.createServer((req,res)=>{
-    console.log(req.url);
+    // console.log(req.url);
     if(req.url == '/'){
     res.end('hello i am server')
     }
@@ -12,9 +13,19 @@ const server = http.createServer((req,res)=>{
     else if(req.url == "/api")
     {
         fs.readFile(`/home/tarun/NodeJS_tuto/UserApi/userApi.json`,"utf-8",(err,data)=>{
-            console.log(data);  
+            // console.log(data);  
             res.end(data);  
         })
+    }
+    else if(req.url == "/api2")
+    {
+        let obj;
+        fs.readFile("/home/tarun/NodeJS_tuto/UserApi/userApi.json","utf-8",(err,data)=>{
+        obj = JSON.stringify(data)
+        console.log(obj);
+        res.end(obj);
+        });
+        
     }
     else
     {
