@@ -1,3 +1,4 @@
+const fs = require("fs")
 const http =require("http")
 const server = http.createServer((req,res)=>{
     console.log(req.url);
@@ -8,6 +9,13 @@ const server = http.createServer((req,res)=>{
     {
         res.end("Hello I am Tarun")
     }
+    else if(req.url == "/api")
+    {
+        fs.readFile(`/home/tarun/NodeJS_tuto/UserApi/userApi.json`,"utf-8",(err,data)=>{
+            console.log(data);  
+            res.end(data);  
+        })
+    }
     else
     {
         res.writeHead(404,{"Content-type":"text/html"})
@@ -16,6 +24,6 @@ const server = http.createServer((req,res)=>{
     // console.log("connected");
 });
 
-server.listen(3005,'localhost',()=>{
-    console.log("Lisening 3005");
+server.listen(3003,'localhost',()=>{
+    console.log("Lisening 3002");
 })
