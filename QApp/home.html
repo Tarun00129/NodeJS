@@ -8,26 +8,47 @@
 </head>
 <body>
     <div id="quotes"></div>
-    <button>New Quotes</button>
+    <div id ="author"></div>
+    <button id = "mybtn">New Quotes</button>
+    <button id = "tweetme">Tweet me</button>
 </body>
 <script>
-    
-    const nQ =(rdata)=>{
-        const rnum = Math.floor(Math.random() * 10);
-            console.log(rnum)
-            console.log(rdata[rnum].author+"~Author")
-            console.log(rdata[rnum].text + "~Quote")   
+    const quotes = document.getElementById("quotes");
+    const  author= document.getElementById("author");
+    const newQ = document.getElementById("mybtn");
+    const tweet = document.getElementById("tweetme");
+    let realdata = "";
+    quoteData = "";
+
+    const postTweet = () =>{
+        const tweetURL = `https://twitter.com/intent/tweet?text=${quoteData.text}+
+        by~${quoteData.author}.`
+        window.open(tweetURL)
     }
-    const getsQuotes =  async () =>{
+
+
+    getNewQuotes =()=>{
+        let rnum =  Math.floor(Math.random()*1000);
+        console.log(rnum);
+        quoteData = realdata[rnum]
+        quotes.innerText =`${quoteData.text}`;
+        author.innerText = `${quoteData.author}`;
+    }
+
+    const getQuotes = async () =>{
     const api = "https://type.fit/api/quotes" ;
         try {
-            let data = await fetch(api)
-            rdata = await data.json()    
-            nQ(rdata);
+            let data = await fetch(api);
+            realdata = await data.json();
+            getNewQuotes();
+            // console.log(realdata[0].text)
         } catch (error) {
             
         }
-    };
-    getsQuotes();
+
+    }
+    tweet.addEventListener("click",postTweet)
+    newQ.addEventListener("click",getNewQuotes);
+    getQuotes();
 </script>
 </html>
