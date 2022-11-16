@@ -1,8 +1,13 @@
 h1 {
-        color: blue;
+    color: #ffff;
     }
-
- body{
+h2{
+    color: #ffff;
+}
+p{
+    color: #ffff;
+}
+ .body1{
     /* background-image: linear-gradient(to top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, */
      /* #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
      border: solid 1px black;
@@ -11,4 +16,32 @@ h1 {
      margin-bottom: auto;
      margin-left: auto;
      margin-bottom: auto;
+     background-color: #151515;
+}
+
+.phonelink{
+    position: fixed; /* Lock location always on the scree */
+    bottom: 0; /* Set to the bottom */
+    left: 0; /* Set to the right */
+    margin: 30px; /* Add space around background */
+}
+.phoneicon{
+    width: 40px; /* Set width of icon */
+    height: 40px; /* Set height of icon */
+}
+@media screen and (max-width: 480px){
+    .lgscreenphone{
+        display: none;  /* On small screens make phone icon disappear */
+    }
+    .mbscreenphone{
+        display: block; /* On small screens make phone icon appear */
+    }
+}
+@media screen and (min-width: 481px){
+    .mbscreenphone{
+        display: none; /* On large screens make phone icon disappear */
+    }
+    .lgscreenphone{
+        display: block; /* On large screens make phone icon appear */
+    }
 }
